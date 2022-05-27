@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>1899.12.30 00:00:00.000.795,C:\Users\brian\OneDrive\Документи\Embarcadero\Studio\Projects\Project1.dproj=C:\Users\brian\OneDrive\Работен плот\kp\Project1.dproj</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.026,C:\Users\brian\OneDrive\Документи\Embarcadero\Studio\Projects\Unit1.dfm=C:\Users\brian\OneDrive\Работен плот\kp\MainUnit.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.026,C:\Users\brian\OneDrive\Документи\Embarcadero\Studio\Projects\Unit1.pas=C:\Users\brian\OneDrive\Работен плот\kp\MainUnit.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.604,=C:\Users\brian\OneDrive\Документи\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+  </Transactions>
+</BorlandProject>

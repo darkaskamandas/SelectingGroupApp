@@ -1,0 +1,69 @@
+unit MainUnit;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Data.DB, Vcl.Grids,
+  Vcl.DBGrids, Vcl.ComCtrls, Datasnap.DBClient;
+
+type
+  TForm1 = class(TForm)
+    ButtonExportToCSVClick: TButton;
+    ButtonExportToHTMLClick: TButton;
+    Products: TLabel;
+    DBGrid1: TDBGrid;
+    StatusBar: TStatusBar;
+    DataSource1: TDataSource;
+    Table: TClientDataSet;
+    procedure ButtonExportToCSVClickClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form1: TForm1;
+
+implementation
+
+{$R *.dfm}
+
+procedure TForm1.ButtonExportToCSVClickClick(Sender: TObject);
+var
+ I: Integer;
+ L: TStringList;
+ S, FileName: String;
+ Bookmark: TBookmark;
+begin
+ L := TStringList.Create();
+ for I := 0 to Table.FieldCount - 1 do
+ begin
+ S := S + Table.Fields.Fields[I].FieldName + ';';
+ end;
+ L.Add(S);
+ Bookmark := Table.GetBookmark();
+ Table.DisableControls();
+ Table.First();
+ while not Table.Eof do
+ begin
+ S := '';
+ for I := 0 to Table.FieldCount - 1 do
+ begin
+ S := S + Table.Fields.Fields[I].AsString + ';';
+ end;
+ L.Add(S);
+ Table.Next();
+ end;
+ Table.GotoBookmark(Bookmark);
+ Table.FreeBookmark(Bookmark);
+ Table.EnableControls();
+ FileName :=
+ ExtractFilePath(Application.ExeName) + 'ExportFileName.csv';
+ L.SaveToFile(FileName);
+ L.Free;
+ ShellExecute(Self.Handle, 'open', PWideChar(FileName), nil, nil, 0);
+end;
+
+end.

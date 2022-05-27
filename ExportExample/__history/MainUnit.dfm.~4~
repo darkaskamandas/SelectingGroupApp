@@ -1,0 +1,137 @@
+object Form1: TForm1
+  Left = 0
+  Top = 0
+  Caption = 'Export Example'
+  ClientHeight = 459
+  ClientWidth = 612
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Products: TLabel
+    Left = 8
+    Top = 13
+    Width = 50
+    Height = 13
+    Caption = 'Products'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object ButtonExportToCSVClick: TButton
+    Left = 64
+    Top = 8
+    Width = 90
+    Height = 25
+    Caption = 'Export to CSV'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentFont = False
+    TabOrder = 0
+  end
+  object ButtonExportToHTMLClick: TButton
+    Left = 160
+    Top = 8
+    Width = 97
+    Height = 25
+    Caption = 'Export to HTML'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentFont = False
+    TabOrder = 1
+  end
+  object DBGrid1: TDBGrid
+    Left = 0
+    Top = 39
+    Width = 617
+    Height = 394
+    TabOrder = 2
+    TitleFont.Charset = DEFAULT_CHARSET
+    TitleFont.Color = clWindowText
+    TitleFont.Height = -11
+    TitleFont.Name = 'Tahoma'
+    TitleFont.Style = []
+    Columns = <
+      item
+        Expanded = False
+        FieldName = 'Product ID'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'Product Name'
+        Width = 73
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'Supplier ID'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'CategoryID'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'QuantityPerUnit'
+        Width = 83
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'UnitPrice'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'UnitsInStock'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'UnitsOnOrder'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'Reorder'
+        Visible = True
+      end>
+  end
+  object StatusBar: TStatusBar
+    Left = 0
+    Top = 434
+    Width = 612
+    Height = 25
+    Panels = <
+      item
+        Text = ' Record Count =  '
+        Width = 140
+      end
+      item
+        Text = 'Product: Chai - Price:'
+        Width = 300
+      end>
+    ExplicitWidth = 537
+  end
+  object DataSource1: TDataSource
+    Left = 256
+    Top = 248
+  end
+end

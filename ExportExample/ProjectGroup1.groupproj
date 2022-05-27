@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{43F62432-E7B8-40B3-B8CB-1ED5F8E31BA4}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="Project1.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\swu 21,22\Kralev 2 semestur\5\K2_LocateLookupExample.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="Project1">
+        <MSBuild Projects="Project1.dproj"/>
+    </Target>
+    <Target Name="Project1:Clean">
+        <MSBuild Projects="Project1.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Project1:Make">
+        <MSBuild Projects="Project1.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="K2_LocateLookupExample">
+        <MSBuild Projects="..\swu 21,22\Kralev 2 semestur\5\K2_LocateLookupExample.dproj"/>
+    </Target>
+    <Target Name="K2_LocateLookupExample:Clean">
+        <MSBuild Projects="..\swu 21,22\Kralev 2 semestur\5\K2_LocateLookupExample.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="K2_LocateLookupExample:Make">
+        <MSBuild Projects="..\swu 21,22\Kralev 2 semestur\5\K2_LocateLookupExample.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="Project1;K2_LocateLookupExample"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="Project1:Clean;K2_LocateLookupExample:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="Project1:Make;K2_LocateLookupExample:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>
